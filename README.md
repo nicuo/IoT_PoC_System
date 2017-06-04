@@ -1,4 +1,4 @@
-Raspberry pi × Arduino
+Raizin: Containerized Raspberry pi with Arduino using temperature sensor
 ===========
 
 Our sensor system is temperature measurement system using **Raspberry pi** and　**Arduino**.　
