@@ -1,15 +1,15 @@
 Raizin:　温度測定システム
 =============================
 
-**Raspberry pi** と　**Arduino**　を用いた温度測定システムである。
+**Raspberry pi** と **Arduino**を用いた温度測定システムである。<br>
 **Raspberry pi** 上の全アプリは、**Docker** 上で動作可能としている。
 
 Description
 -----------
 本システムは、**Raspberry pi** と **Arduino** が連携することで、温度測定を実施する。
-温度測定およびLED警告をArduinoで実装している。
+Arduinoを用いて、温度測定およびLED警告を実装している。
 LED警告では、20度から30度の間は、緑のLED、それ以外の温度は赤のLEDが発光する。
-Raspberry piでは、温度測定の結果を表示する。
+Raspberry piによって、温度測定の結果を表示する。
 
 Requirement
 -----------
@@ -25,7 +25,7 @@ Circuit wiring
 ----------
 
 配線図は、下記。
-![配線図](https://cloud.githubusercontent.com/assets/14259271/26761880/917912b6-4972-11e7-9428-170dc8b7316e.png)
+![配線図](https://cloud.githubusercontent.com/assets/14259271/26763300/b7287e98-498b-11e7-8cd3-93667b49b096.jpg)
 
 配線の詳細は、下記の表を参照
 
@@ -49,7 +49,7 @@ Install
 
 下記のリンク先よりダウンロード
 
-[Aruduino IDE](https://www.arduino.cc/en/Main/Software)
+[https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
 
 2. スケッチ、検証、書き込み
 
