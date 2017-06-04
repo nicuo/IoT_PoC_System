@@ -1,7 +1,7 @@
 Raizin:　温度測定システム
 =============================
 
-**Raspberry pi** と **Arduino**を用いた温度測定システムである。<br>
+Raizinは、 **Raspberry pi** と **Arduino**を用いた温度測定システムである。<br>
 **Raspberry pi** 上の全アプリは、**Docker** 上で動作可能としている。
 
 Description
@@ -24,7 +24,7 @@ Requirement
 Circuit wiring
 ----------
 
-配線図は、下記。
+配線図は、下記 <br>
 ![配線図](https://cloud.githubusercontent.com/assets/14259271/26763300/b7287e98-498b-11e7-8cd3-93667b49b096.jpg)
 
 配線の詳細は、下記の表を参照
