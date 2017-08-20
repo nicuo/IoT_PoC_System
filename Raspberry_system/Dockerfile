@@ -14,7 +14,6 @@ RUN apt-get install -y\
             git
 RUN pip install rpi.gpio
 RUN pip install pyserial
-#RUN pip install urllib3
 
 #STEP:2 do python file (. is Raspberry_system)
 ADD ./python_arduino_ctrl.py /home
