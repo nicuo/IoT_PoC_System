@@ -16,7 +16,9 @@ RUN apt-get install -y\
 RUN pip install bottle
 
 # STEP:2 start apache server
-ADD ./index.html /var/www/html/
+#ADD ./index.html /var/www/html/
+ADD ./home.wsgi /var/www/html/
+RUN sed -i -e "\#DocumentRoot /var/www/html#a WSGIScriptAlias / /var/www/html/home.wsgi" /etc/apache2/sites-available/000-default.conf
 EXPOSE 80
 ENTRYPOINT ["/usr/sbin/apache2ctl"]
 CMD ["-D", "FOREGROUND"]
