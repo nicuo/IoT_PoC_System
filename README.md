@@ -26,7 +26,7 @@ Circuit wiring
 ----------
 
 Wiring diagram is below: <br>
-![配線図](https://cloud.githubusercontent.com/assets/14259271/26763300/b7287e98-498b-11e7-8cd3-93667b49b096.jpg)
+![配線図](https://user-images.githubusercontent.com/14259271/29491991-43e64510-85a8-11e7-80f8-9475fff6b1ae.jpg)
 
 | Aruduino pin  | LM75B | LED (RED)       | LED (GREEN)   |
 |:-------------:|:-----:|:---------------:|:-------------:|
@@ -117,7 +117,7 @@ sudo apt-get install docker.io
 sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 
 # Docker file run
-cd Sensor_app/
+cd Sensor_app/Raspberry_system/
 sudo docker build -t nicuo/sensor .
 sudo docker run -ti --privileged nicuo/sensor
 ```
