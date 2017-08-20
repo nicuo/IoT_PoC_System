@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import serial
 import time
-import urllib.request as ur
+from urllib import urlopen
 
 def main ():
     # def main : serial communication, per 2s , count 100, print
@@ -11,7 +11,7 @@ def main ():
         time.sleep(1)
         tmp = ser.readline()
         print tmp
-        ur.urlopen('http://192.168.2.101:8080/input_temp?temp=' + str(temperture))
+        urlopen('http://192.168.2.101:8080/input_temp?temp=' + str(temperture))
     ser.close()
 
 if __name__ == '__main__':
