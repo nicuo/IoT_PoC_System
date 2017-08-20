@@ -11,7 +11,9 @@ def main ():
         time.sleep(1)
         temp = ser.readline()
         print temp
-        urlopen('http://192.168.2.101:8080/input_temp?temp=' + str(temp))
+        respose = urlopen('http://192.168.2.101:8080/input_temp?temp=' + str(temp))
+        data = response.read()
+        print (data)
     ser.close()
 
 if __name__ == '__main__':
