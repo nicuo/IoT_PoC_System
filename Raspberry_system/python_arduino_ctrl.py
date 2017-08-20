@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import serial
 import time
-import urllib.request as ur
+import urllib3.request as ur
 
 def main ():
     # def main : serial communication, per 2s , count 100, print
