@@ -12,7 +12,8 @@ RUN apt-get install -y\
             make\
             git\
             vim\
-            apache2
+            apache2\
+            libapache2-mod-wsgi
 RUN pip install bottle
 
 # STEP:2 start apache server
