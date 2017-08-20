@@ -6,7 +6,7 @@ import time
 def main ():
     # def main : serial communication, per 2s , count 100, print
     ser = serial.Serial('/dev/ttyACM0', 9600)
-    while (true):
+    while (True):
         time.sleep(2)
         tmp = ser.readline()
         print tmp
