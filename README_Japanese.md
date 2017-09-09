@@ -1,7 +1,7 @@
-Raizin:　温度測定システム
+IoT PoC System:　温度測定システム
 =============================
 
-Raizinは、 **Raspberry pi** と **Arduino**を用いた温度測定システムである。<br>
+本IoT PoC Systemは、 **Raspberry pi** と **Arduino**を用いた温度測定システムである。<br>
 **Raspberry pi** 上の全アプリは、**Docker** 上で動作可能としている。
 
 Description
