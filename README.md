@@ -1,7 +1,7 @@
-Raizin: temperature sensing system
+IoT PoC System: Sensor devices transmit temperature data to Cloud system.
 ==================================
 
-Our sensor system **Raizin** is temperature measurement system using **Raspberry pi** and　**Arduino**.　
+Our IoT PoC System is temperature measurement system using **Raspberry pi** and **Arduino**.　
 All application can run on docker.
 
 Description
