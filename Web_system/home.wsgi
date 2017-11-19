@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import mysql.connector
+"""
 connector = mysql.connector.connect (
             user     = 'root',
             password = 'mysql',
             host     = '172.17.0.3',
             database = 'test'
 )
+"""
 
 import bottle
 application = bottle.default_app()
@@ -15,6 +17,7 @@ application = bottle.default_app()
 def home():
     return "apache and wsgi. sitting in a tree"
 
+"""
 @bottle.route('/input_temp')
 def input_temp():
     # input temperatures
@@ -30,3 +33,4 @@ def input_temp():
 
 #　close connector 
 connector.close
+"""
