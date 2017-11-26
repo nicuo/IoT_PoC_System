@@ -109,17 +109,42 @@ command is below:
 
 ```
 # git clone
-git clone https://github.com/nicuo/Sensor_app.git
+git clone https://github.com/nicuo/IoT_PoC_System.git
 
 # Docker install
 sudo apt-get update
 sudo apt-get install docker.io
 sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 
-# Docker file run
-cd Sensor_app/Raspberry_system/
+# Docker file run (Data Base system)
+sudo docker run -v /var/lib/mysql --name mysql_data armhf/busybox
+sudo docker run --volumes-from mysql_data --name mysql -e MYSQL_ROOT_PASSWORD=mysql -d -p 3306:3306 hypriot/rpi-mysql
+
+sudo docker exec -it mysql bash
+cat << EOF > create_table.sql
+CREATE TABLE temperatures (
+  timestamp   DATETIME NOT NULL,
+  device_id    INT NOT NULL,
+  temperature  INT NOT NULL
+);
+EOF
+mysql -u root -pmysql -e"CREATE DATABASE db1"
+mysql db1 -u root -pmysql -e"SOURCE create_table.sql"
+mysql db1 -u root -pmysql -e"INSERT INTO temperatures VALUES (NOW(), 1, 29);"
+mysql db1 -u root -pmysql -e"SELECT * FROM temperatures;"
+
+## (Contrl + p, Control + q)
+
+# Docker file run (web system)
+cd IoT_PoC_System/Web_system/
+sudo docker build -t nicuo/httpd .
+sudo docker run -p 8080:80 -d nicuo/httpd
+
+# Docker file run (sensing system)
+cd IoT_PoC_System/Raspberry_system/
 sudo docker build -t nicuo/sensor .
 sudo docker run -ti --privileged nicuo/sensor
+
 ```
 
 Author
