@@ -8,14 +8,18 @@ connector = mysql.connector.connect (
             database = 'db1'
 )
 
-import bottle
-application = bottle.default_app()
+from bottle import (
+    run,
+    route,
+    default_app
+)
+application = default_app()
 
-@bottle.route('/')
+@route('/')
 def home():
-    return "apache and wsgi. sitting in a tree"
+    return "Display temperature on web board"
 
-@bottle.route('/list')
+@route('/list')
 def list():
 
     cursor = connector.cursor()
@@ -33,14 +37,10 @@ def list():
 
     return "DB "+disp
 
-@bottle.route('/input_temp')
+@route('/input_temp')
 def input_temp():
     # input temperatures
-    device_id = 1
-    temerature = 30.5
     cursor = connector.cursor()
-    #cursor.execute("INSERT INTO `temperatures` (`temperature`, `update_time`) VALUES (" + request.query.temp + ", NOW() )")
-    #cursor.execute("INSERT INTO `temperatures` (`timestamp`, `device_id`, `temperature`) VALUES (NOW() " + device_id + ", " + temperature + ")")
     cursor.execute("INSERT INTO `temperatures` (`timestamp`, `device_id`, `temperature`) VALUES (NOW(), 1, 30.5)")
 
     # commit
