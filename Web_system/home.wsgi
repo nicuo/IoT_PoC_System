@@ -11,6 +11,7 @@ connector = mysql.connector.connect (
 from bottle import (
     run,
     route,
+    request,
     default_app
 )
 application = default_app()
@@ -50,5 +51,21 @@ def input_temp():
 
     return "SUCCESS"
 
-#　close connector 
+@route('/test')
+def test():
+    # input temperatures
+    device_id = request.query.device_id
+    temperature = request.query.temperature
+
+    cursor = connector.cursor()
+    cursor.execute("INSERT INTO `temperatures` (`timestamp`, `device_id`, `temperature`) VALUES (NOW(), %s, %s)", (device_id,temperature))
+
+    # commit
+    connector.commit();
+
+    cursor.close
+
+    return device_id + temperature
+
+
 connector.close
