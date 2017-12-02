@@ -54,5 +54,20 @@ def input_temp():
 
     return "SUCCESS"
 
+@route('/clear')
+def clear():
+    # clear all data at temperatures table
+    cursor = connector.cursor()
+    cursor.execute("TRUNCATE TABLE temperatures")
+
+    # commit
+    connector.commit();
+
+    cursor.close
+
+    return "SUCCESS"
+
+
+
 
 connector.close
