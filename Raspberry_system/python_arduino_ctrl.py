@@ -14,10 +14,10 @@ def main ():
         time.sleep(1)
         #temp = ser.readline()
         temp = test_temp()
-        print temp
-        #respose = urlopen('http://192.168.2.101:8080/input_temp?temp=' + str(temp))
-        #data = response.read()
-        #print (data)
+        print('temerature: {}'.format(temp))
+        response = urlopen('http://192.168.2.103:8080/input_temp?device_id=1&temperature='+ str(temp))
+        data = response.read()
+        print('response: {}'.format(data))
     #ser.close()
 
 if __name__ == '__main__':
