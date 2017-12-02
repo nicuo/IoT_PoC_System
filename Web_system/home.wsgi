@@ -41,19 +41,6 @@ def list():
 @route('/input_temp')
 def input_temp():
     # input temperatures
-    cursor = connector.cursor()
-    cursor.execute("INSERT INTO `temperatures` (`timestamp`, `device_id`, `temperature`) VALUES (NOW(), 1, 30.5)")
-
-    # commit
-    connector.commit();
-
-    cursor.close
-
-    return "SUCCESS"
-
-@route('/test')
-def test():
-    # input temperatures
     device_id = request.query.device_id
     temperature = request.query.temperature
 
@@ -65,7 +52,7 @@ def test():
 
     cursor.close
 
-    return device_id + temperature
+    return "SUCCESS"
 
 
 connector.close
