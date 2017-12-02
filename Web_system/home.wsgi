@@ -22,10 +22,13 @@ def home():
 
 @route('/list')
 def list():
+    """list temperature from DB"""
 
+    # select  all data from DB
     cursor = connector.cursor()
     cursor.execute("select `timestamp`, `device_id`, `temperature` from temperatures")
 
+    # shaping all data
     disp  = "<table>"
     disp += "<tr><th>date</th><th>ID</th><th>temperature</th></tr>"
     
@@ -34,40 +37,42 @@ def list():
     
     disp += "</table>"
     
+    # close
     cursor.close
 
     return "DB "+disp
 
 @route('/input_temp')
 def input_temp():
-    # input temperatures
+    """input temperature to DB """
+
+    # set temperature variables
     device_id = request.query.device_id
     temperature = request.query.temperature
 
+    # insert into temperatures
     cursor = connector.cursor()
     cursor.execute("INSERT INTO `temperatures` (`timestamp`, `device_id`, `temperature`) VALUES (NOW(), %s, %s)", (device_id,temperature))
 
-    # commit
+    # commit and close
     connector.commit();
-
     cursor.close
 
     return "SUCCESS"
 
 @route('/clear')
 def clear():
-    # clear all data at temperatures table
+    """ clear all data at temperatures table """
+
+    # clear all data
     cursor = connector.cursor()
     cursor.execute("TRUNCATE TABLE temperatures")
 
-    # commit
+    # commit and close
     connector.commit();
-
     cursor.close
 
     return "SUCCESS"
-
-
 
 
 connector.close
