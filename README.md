@@ -145,6 +145,8 @@ cd IoT_PoC_System/Raspberry_system/
 sudo docker build -t nicuo/sensor .
 sudo docker run -ti --privileged nicuo/sensor
 
+## (Contrl + c)
+
 ```
 
 Author
