@@ -112,9 +112,7 @@ command is below:
 git clone https://github.com/nicuo/IoT_PoC_System.git
 
 # Docker install
-sudo apt-get update
-sudo apt-get install docker.io
-sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
+sudo curl -sSL https://get.docker.com/ | sh
 
 # Docker file run (Data Base system)
 sudo docker run -v /var/lib/mysql --name mysql_data armhf/busybox
